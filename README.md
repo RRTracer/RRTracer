@@ -1,6 +1,7 @@
 # Junior Web Developer Portfolio
 
 Welcome to my portfolio! I'm a self-taught junior web developer with a passion for building responsive and user-friendly web applications. This portfolio showcases my skills and projects using various technologies.
+[portfolio](https://portfolio-rrtracer.netlify.app)
 
 ## Technologies Used
 
