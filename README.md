@@ -2,7 +2,7 @@
 
 Welcome to my portfolio! I'm a self-taught junior web developer with a passion for building responsive and user-friendly web applications. This portfolio showcases my skills and projects using various technologies.
 [portfolio](https://portfolio-rrtracer.netlify.app)
-<a href="https://app.daily.dev/rrtracer"><img src="https://api.daily.dev/devcards/v2/2b9xBJfWhhgXVCMNrryJR.png?type=default&r=oje" width="356" alt="RRTRACER's Dev Card"/></a>
+[![RRTRACER's Dev Card](https://api.daily.dev/devcards/v2/2b9xBJfWhhgXVCMNrryJR.png?type=default&r=oje)](https://app.daily.dev/rrtracer)
 
 ## Technologies Used
 
