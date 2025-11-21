@@ -26,6 +26,10 @@ interval=5
 command=~/.config/i3blocks/scripts/disk
 interval=60
 
+[home_disk]
+command=~/.config/i3blocks/scripts/disk-home
+interval=60
+
 [wifi]
 command=~/.config/i3blocks/scripts/wifi
 interval=10
@@ -81,6 +85,12 @@ cat > "$SCRIPT_DIR/time" << 'EOF'
 #!/usr/bin/env bash
 now=$(date '+%a %d %b  %H:%M')
 echo "<span foreground='#fffaf4'></span> $now"
+EOF
+
+cat > "$SCRIPT_DIR/disk-home" << 'EOF'
+#!/usr/bin/env bash
+disk=$(du -sh /home/rrtracer 2>/dev/null | awk '{print $1}')
+echo "<span foreground='#ffb900'></span> $disk"
 EOF
 
 echo ">>> Rend les scripts exécutables..."
