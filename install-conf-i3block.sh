@@ -16,11 +16,11 @@ markup=pango
 
 [cpu]
 command=~/.config/i3blocks/scripts/cpu
-interval=5
+interval=2
 
 [memory]
 command=~/.config/i3blocks/scripts/memory
-interval=5
+interval=2
 
 [disk]
 command=~/.config/i3blocks/scripts/disk
@@ -31,12 +31,12 @@ command=~/.config/i3blocks/scripts/disk-home
 interval=60
 
 [wifi]
-command=~/.config/i3blocks/scripts/wifi
+command=/usr/share/i3blocks/wifi
 interval=10
 
 [volume]
-command=~/.config/i3blocks/scripts/volume
-interval=2
+command=/usr/share/i3blocks/volume
+interval=1
 
 [time]
 command=~/.config/i3blocks/scripts/time
@@ -45,24 +45,28 @@ EOF
 
 echo ">>> Scripts CPU / MEM / DISK / WIFI / VOLUME / TIME..."
 
+# CPU -------------------------------------------
 cat > "$SCRIPT_DIR/cpu" << 'EOF'
 #!/usr/bin/env bash
 usage=$(grep 'cpu ' /proc/stat | awk '{u=($2+$4)*100/($2+$4+$5)} END {printf("%.1f%%", u)}')
 echo "<span foreground='#abe15b'></span> $usage"
 EOF
 
+# MEMORY ----------------------------------------
 cat > "$SCRIPT_DIR/memory" << 'EOF'
 #!/usr/bin/env bash
 used=$(free -h | awk '/Mem:/ {print $3}')
 echo "<span foreground='#9a5fec'></span> $used"
 EOF
 
+# ROOT DISK -------------------------------------
 cat > "$SCRIPT_DIR/disk" << 'EOF'
 #!/usr/bin/env bash
 disk=$(df -h / | awk 'NR==2 {print $3 "/" $2}')
 echo "<span foreground='#ffd242'></span> $disk"
 EOF
 
+# WIFI (ton script perso, même si non utilisé dans la config)
 cat > "$SCRIPT_DIR/wifi" << 'EOF'
 #!/usr/bin/env bash
 ssid=$(iwgetid -r)
@@ -70,6 +74,7 @@ signal=$(awk 'NR==3 {print int($3 * 1)}' /proc/net/wireless | sed 's/\.//')
 echo "<span foreground='#0092ff'></span> ${ssid:-No WiFi} (${signal:-0}%)"
 EOF
 
+# VOLUME (ton script perso, même si tu utilises celui d'i3blocks)
 cat > "$SCRIPT_DIR/volume" << 'EOF'
 #!/usr/bin/env bash
 vol=$(pamixer --get-volume)
@@ -81,12 +86,14 @@ icon=""
 echo "<span foreground='#67fff0'>$icon</span> $vol%"
 EOF
 
+# TIME ------------------------------------------
 cat > "$SCRIPT_DIR/time" << 'EOF'
 #!/usr/bin/env bash
-now=$(date '+%a %d %b  %H:%M')
+now=$(date '+%a %d %b %H:%M')
 echo "<span foreground='#fffaf4'></span> $now"
 EOF
 
+# HOME DISK -------------------------------------
 cat > "$SCRIPT_DIR/disk-home" << 'EOF'
 #!/usr/bin/env bash
 disk=$(du -sh /home/rrtracer 2>/dev/null | awk '{print $1}')
