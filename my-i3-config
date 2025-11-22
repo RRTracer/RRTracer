@@ -71,6 +71,15 @@ bindsym Mod1+r exec systemctl reboot
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+#-------------------------------------------------  Couleurs perso -----------------------------------------------#
+#-----------------------------------------------------------------------------------------------------------------#
+
+
+client.focused          #ff0000 #ff0000 #ffffff #ff0000
+client.unfocused        #330000 #330000 #aaaaaa #330000
+client.focused_inactive #550000 #550000 #cccccc #550000
+client.urgent           #ff4444 #ff4444 #ffffff #ff4444
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
