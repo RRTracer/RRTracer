@@ -1,13 +1,13 @@
 /* Fonts + icons reduced version */
 
 * {
-  blue1: #89B4FA;
-  blue2: #313244;
+  blue1: #1900ffff;
+  blue2: #0a0e58ff;
   bg:    #1E1E2E;
   blue4: #2E3440;
   al:    #00000000;
-  fg:    #88C0D0FF;
-  wh:    #FFFFFF;
+  fg:    #b11111c7;
+  wh:    #ff0000ff;
 }
 
 /* General Configuration */
