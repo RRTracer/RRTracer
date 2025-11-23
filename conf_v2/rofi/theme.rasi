@@ -1,0 +1,117 @@
+/* Fonts + icons reduced version */
+
+* {
+  blue1: #89B4FA;
+  blue2: #313244;
+  bg:    #1E1E2E;
+  blue4: #2E3440;
+  al:    #00000000;
+  fg:    #88C0D0FF;
+  wh:    #FFFFFF;
+}
+
+/* General Configuration */
+configuration {
+    font:                "JetBrainsMono Nerd Font Propo 15";  /* ↓ Smaller font */
+    font-weight:         600;
+    show-icons:          true;
+    icon-theme:          "Papirus";
+    display-drun:        " ";
+    drun-display-format: "{name}";
+    disable-history:     false;
+    hide-scrollbar:      true;
+    cycle: false;
+}
+
+/* Window */
+window {
+    transparency:      "real";
+    background-color:  @bg;
+    text-color:        @fg;
+    border:            0.10em;
+    border-color:      @blue1;
+    border-radius:     0.35em;
+    width:             1100px;   /* same */
+    location:          center;
+}
+
+/* Input Bar */
+inputbar {
+    background-color:  @blue2;
+    text-color:        @fg;
+    padding:           0.45em 0.5em;   /* ↓ slightly smaller */
+    margin:            0.6em 0.6em 0;
+    border:            0.05em;
+    border-color:      @blue1;
+    border-radius:     0.35em;
+    children:          [ prompt, entry ];
+}
+
+/* Prompt */
+prompt {
+    text-color:        @wh;
+    background-color:  transparent;
+    padding:           0.15em 0 0 0;
+}
+
+/* Entry */
+entry {
+    background-color:  @al;
+    text-color:        @wh;
+    placeholder-color: @wh;
+    placeholder:       "Search...";
+    padding:           0.15em 0.5em;
+}
+
+/* Listview */
+listview {
+    background-color:  @al;
+    columns:           8;         /* More usable with smaller icons */
+    lines:             2;
+    spacing:           0em;
+    margin:            0.6em 0.6em 0;
+    layout:            vertical;
+}
+
+/* Elements */
+element {
+    background-color:  @al;
+    text-color:        @wh;
+    border-radius:     0.35em;
+    padding:           0.25em 0.4em;
+    margin:            0.3em;
+    border:            0.10em;
+    border-color:      @al;
+}
+
+/* Icons */
+element-icon {
+    background-color:  @al;
+    text-color:        inherit;
+    size:              72px;  /* ↓ smaller (96 → 72) */
+}
+
+/* Selected */
+element selected {
+    background-color:  @blue1;
+    text-color:        @bg;
+    border-color:      @blue1;
+}
+
+/* Text */
+element-text {
+    background-color:  transparent;
+    text-color:        inherit;
+    expand:            true;
+    horizontal-align:  0;
+    vertical-align:    0.5;
+}
+
+/* Mainbox */
+mainbox {
+    children:          [ inputbar, listview ];
+    spacing:           0em;
+    background-color:  @al;
+    margin:            0 0 0.5em 0;
+}
+

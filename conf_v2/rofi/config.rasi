@@ -1,0 +1,8 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "Papirus";
+    font: "Iosevka Nerd Font 12";
+}
+@theme "~/.config/rofi/theme.rasi"
+
