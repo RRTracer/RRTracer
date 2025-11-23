@@ -1,0 +1,123 @@
+[colors]
+bg = #1e1e2e
+;bg = #801e1e2e ;bg a 50% de 
+;bg = #4D1e1e2e 30%
+;bg = #331e1e2e ; 20%
+fg = #cdd6f4
+red = #f38ba8
+blue = #89b4fa
+yellow = #f9e2af
+green = #a6e3a1
+
+[bar/main]
+width = 100%
+height = 30
+background = ${colors.bg}
+foreground = ${colors.fg}
+font-0 = Iosevka Nerd Font:size=12;2
+
+modules-left = sep power sep
+modules-center = sep date sep
+;modules-right = volume wifi iface
+modules-right = cpu sep ram sep volume sep wifi sep iface
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; POWER BUTTON
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/power]
+type = custom/text
+format = 
+format-foreground = ${colors.red}
+click-left = systemctl poweroff
+click-right = systemctl reboot
+click-middle = systemctl suspend
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DATE CENTER
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/date]
+type = internal/date
+interval = 1
+date = %A %d %B  %H:%M
+format = <label>
+label =   %date%
+format-foreground = ${colors.blue}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; VOLUME (i3blocks)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/volume]
+type = custom/script
+exec = /usr/share/i3blocks/volume
+interval = 1
+format-prefix = "  "
+label = %output%
+format = <label>
+click-right = amixer -D pulse sset Master toggle
+scroll-up = amixer -D pulse sset Master 5%+
+scroll-down = amixer -D pulse sset Master 5%-
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; SEPARATOR
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/sep]
+type = custom/text
+format = "    "
+format-foreground = ${colors.blue}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; CPU (i3blocks)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/cpu]
+type = custom/script
+exec = /usr/share/i3blocks/cpu_usage
+interval = 2
+format-prefix = "  "
+label = %output%
+format = <label>
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; RAM (i3blocks)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/ram]
+type = custom/script
+exec = /usr/share/i3blocks/memory
+interval = 2
+format-prefix = "  "
+label = %output%
+format = <label>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; WIFI (i3blocks)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/wifi]
+type = custom/script
+exec = /usr/share/i3blocks/wifi
+interval = 3
+format-prefix = "  "
+label = %output%
+format = <label>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; INTERFACE / IP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/iface]
+type = custom/script
+exec = /usr/share/i3blocks/iface
+interval = 2
+format-prefix = "󰒢  " 
+label = %output%
+format = <label>
+
