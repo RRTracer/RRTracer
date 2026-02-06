@@ -43,7 +43,3 @@ I am a self-taught web developer with a strong passion for learning and building
 
 
 Thank you for visiting my portfolio! I look forward to connecting with you.
-
-
-
-![cheetsheet](https://drive.proton.me/urls/CPR9P3FADG#XKQl5PbtzoSe)
