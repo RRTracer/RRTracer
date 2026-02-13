@@ -2,6 +2,9 @@
 
 Welcome to my portfolio! I'm a self-taught junior web developer with a passion for building responsive and user-friendly web applications. This portfolio showcases my skills and projects using various technologies.
 [portfolio](https://portfolio-rrtracer.netlify.app)
+[Projet sur lequel je travail](https://dev-cluser.netlify.app)
+
+
 
 <a href="https://app.daily.dev/rrtracer"><img src="https://api.daily.dev/devcards/v2/2b9xBJfWhhgXVCMNrryJR.png?type=wide&r=oje" width="400" alt="RRTRACER's Dev Card"/></a>
 ## Technologies Used
@@ -9,9 +12,11 @@ Welcome to my portfolio! I'm a self-taught junior web developer with a passion f
 In my journey as a web developer, I have worked with several technologies to build robust and efficient web applications. Here are some of the key technologies I have experience with:
 
 - **React**: a powerful JavaScript library for creating user interfaces, especially complex and varied applications.
-- **Tailwind CSS**: A utility-first CSS framework that allows for rapid UI development with pre-defined classes.
+- **Tailwind CSS + DaisyUI**: A utility-first CSS framework that allows for rapid UI development with pre-defined classes. DaisyUI is a pre-build Components librairy
 - **Django**: A high-level Python web framework that encourages rapid development and clean, pragmatic design. (i just use for backend)
 - **Git**: Version control system for tracking changes in source code during software development.
+- **TypeScript**
+- **ViteJS**
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
